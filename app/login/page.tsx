@@ -1,17 +1,18 @@
-import AuthButton from '@/components/AuthButton';
+import AuthButton from "@/components/AuthButton";
 
-export default function Login() {
+export default function LoginPage() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Smart Bookmark App
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] p-4">
+      <div className="w-full max-w-md p-8 glass rounded-2xl">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+            Welcome Back
+          </h1>
+          <p className="text-muted-foreground mt-2">
+            Sign in to access your BrainBucket
           </p>
         </div>
+
         <div className="flex justify-center">
           <AuthButton />
         </div>

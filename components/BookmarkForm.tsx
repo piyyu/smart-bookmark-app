@@ -2,6 +2,7 @@
 
 import { createClient } from '@/lib/supabase/client';
 import { useState } from 'react';
+import { Plus, Link as LinkIcon, Type } from 'lucide-react';
 
 export default function BookmarkForm() {
   const [title, setTitle] = useState('');
@@ -24,66 +25,56 @@ export default function BookmarkForm() {
 
       setTitle('');
       setUrl('');
+      // Optionally trigger a refresh or toast here
     }
     setLoading(false);
   };
 
   return (
-    <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:p-6 mb-8">
-      <div className="md:grid md:grid-cols-3 md:gap-6">
-        <div className="md:col-span-1">
-          <h3 className="text-lg font-medium leading-6 text-gray-900">Add Bookmark</h3>
-          <p className="mt-1 text-sm text-gray-500">
-            Save your favorite links for later.
-          </p>
-        </div>
-        <div className="mt-5 md:mt-0 md:col-span-2">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-6 gap-6">
-              <div className="col-span-6 sm:col-span-3">
-                <label htmlFor="title" className="block text-sm font-medium text-gray-700">
-                  Title
-                </label>
-                <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
-                  placeholder="Google"
-                  required
-                />
-              </div>
-
-              <div className="col-span-6 sm:col-span-3">
-                <label htmlFor="url" className="block text-sm font-medium text-gray-700">
-                  URL
-                </label>
-                <input
-                  type="url"
-                  name="url"
-                  id="url"
-                  value={url}
-                  onChange={(e) => setUrl(e.target.value)}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
-                  placeholder="https://google.com"
-                  required
-                />
-              </div>
+    <div className="glass rounded-xl p-6 mb-8 w-full max-w-2xl mx-auto">
+      <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+        <Plus className="h-5 w-5 text-primary" />
+        Add New Bookmark
+      </h3>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Type className="h-4 w-4 text-muted-foreground" />
             </div>
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                disabled={loading}
-                className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
-              >
-                {loading ? 'Saving...' : 'Save'}
-              </button>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="pl-10 block w-full rounded-lg border-input bg-background/50 border focus:ring-2 focus:ring-ring focus:border-input sm:text-sm py-2"
+              placeholder="Bookmark Title (e.g. Google)"
+              required
+            />
+          </div>
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <LinkIcon className="h-4 w-4 text-muted-foreground" />
             </div>
-          </form>
+            <input
+              type="url"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              className="pl-10 block w-full rounded-lg border-input bg-background/50 border focus:ring-2 focus:ring-ring focus:border-input sm:text-sm py-2"
+              placeholder="https://example.com"
+              required
+            />
+          </div>
         </div>
-      </div>
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            disabled={loading}
+            className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring disabled:opacity-50 transition-colors"
+          >
+            {loading ? 'Saving...' : 'Save Bookmark'}
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

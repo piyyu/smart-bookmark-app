@@ -2,10 +2,8 @@
 
 import { createClient } from '@/lib/supabase/client';
 import { ComponentProps } from 'react';
-import { cn } from '@/lib/utils';
-import { Chrome } from 'lucide-react'; // Simulating Google icon with Chrome for now as Lucide doesn't have brand icons, or use SVG.
 
-export default function AuthButton({ className, text = "Sign in with Google", ...props }: ComponentProps<'button'> & { text?: string }) {
+export default function LandingGoogleButton({ className, children, ...props }: ComponentProps<'button'>) {
   const supabase = createClient();
 
   const handleLogin = async () => {
@@ -20,13 +18,10 @@ export default function AuthButton({ className, text = "Sign in with Google", ..
   return (
     <button
       onClick={handleLogin}
-      className={cn(
-        "flex items-center justify-center gap-2 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg shadow-sm px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors",
-        className
-      )}
+      className={`flex items-center justify-center gap-3 ${className}`}
       {...props}
     >
-      <svg className="h-5 w-5" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
         <path
           d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
           fill="#4285F4"
@@ -44,7 +39,7 @@ export default function AuthButton({ className, text = "Sign in with Google", ..
           fill="#EA4335"
         />
       </svg>
-      {text}
+      <span>{children}</span>
     </button>
   );
 }
