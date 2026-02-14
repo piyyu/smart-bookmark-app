@@ -62,10 +62,10 @@ export default function BookmarkList({ initialBookmarks }: { initialBookmarks: B
 
   if (bookmarks.length === 0) {
     return (
-      <div className="text-center py-20 bg-muted/20 rounded-xl border border-dashed border-border">
-        <Globe className="mx-auto h-12 w-12 text-muted-foreground opacity-50" />
-        <h3 className="mt-2 text-lg font-semibold text-foreground">No bookmarks yet</h3>
-        <p className="mt-1 text-sm text-muted-foreground">Get started by adding a new bookmark above.</p>
+      <div className="text-center py-20 bg-landing-forest/5 dark:bg-white/5 rounded-xl border border-dashed border-landing-forest/10 dark:border-white/10">
+        <Globe className="mx-auto h-12 w-12 text-landing-forest/30 dark:text-white/30" />
+        <h3 className="mt-2 text-lg font-semibold text-landing-forest dark:text-white">No bookmarks yet</h3>
+        <p className="mt-1 text-sm text-landing-forest/50 dark:text-white/50">Get started by adding a new bookmark above.</p>
       </div>
     )
   }
@@ -81,11 +81,11 @@ export default function BookmarkList({ initialBookmarks }: { initialBookmarks: B
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-xl bg-card border border-border/50 shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-xl bg-white dark:bg-[#111] border border-landing-forest/5 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
             <div className="p-5">
               <div className="flex items-start justify-between mb-4">
-                <div className="h-10 w-10 rounded-lg bg-accent/50 p-2 flex items-center justify-center">
+                <div className="h-10 w-10 rounded-lg bg-landing-forest/5 dark:bg-white/5 p-2 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={getFaviconUrl(bookmark.url) || ''}
@@ -100,27 +100,27 @@ export default function BookmarkList({ initialBookmarks }: { initialBookmarks: B
                 </div>
                 <button
                   onClick={() => handleDelete(bookmark.id)}
-                  className="text-muted-foreground hover:text-destructive transition-colors p-1 rounded-full hover:bg-destructive/10"
+                  className="text-landing-forest/30 dark:text-white/30 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-red-500/10"
                   title="Delete"
                 >
                   <Trash2 className="h-4 w-4" />
                 </button>
               </div>
 
-              <h3 className="font-semibold text-lg line-clamp-1 mb-1 group-hover:text-primary transition-colors">
+              <h3 className="font-semibold text-lg line-clamp-1 mb-1 text-landing-forest dark:text-white group-hover:text-landing-primary transition-colors">
                 {bookmark.title}
               </h3>
-              <p className="text-sm text-muted-foreground line-clamp-1 break-all">
+              <p className="text-sm text-landing-forest/50 dark:text-white/50 line-clamp-1 break-all">
                 {bookmark.url}
               </p>
             </div>
 
-            <div className="bg-muted/30 px-5 py-3 border-t border-border/50 flex justify-end">
+            <div className="bg-landing-forest/5 dark:bg-white/5 px-5 py-3 border-t border-landing-forest/5 dark:border-white/5 flex justify-end">
               <a
                 href={bookmark.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-medium text-primary hover:text-primary/80 flex items-center gap-1"
+                className="text-xs font-medium text-landing-primary hover:text-landing-primary/80 flex items-center gap-1 transition-colors"
               >
                 Visit Website <ExternalLink className="h-3 w-3" />
               </a>

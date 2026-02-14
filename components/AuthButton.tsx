@@ -21,7 +21,7 @@ export default function AuthButton({ className, text = "Sign in with Google", ..
     <button
       onClick={handleLogin}
       className={cn(
-        "flex items-center justify-center gap-2 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg shadow-sm px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors",
+        "flex items-center justify-center gap-2 bg-white dark:bg-[#0A0A0A] border border-landing-forest/10 dark:border-white/10 rounded-lg shadow-sm px-5 py-2.5 text-sm font-medium text-landing-forest dark:text-white hover:bg-landing-forest/5 dark:hover:bg-white/5 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-landing-primary transition-all duration-300",
         className
       )}
       {...props}

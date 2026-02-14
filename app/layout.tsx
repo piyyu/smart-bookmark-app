@@ -21,8 +21,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BrainBucket - Smart Bookmark Manager",
-  description: "Organize your digital life with BrainBucket.",
+  title: "Markit — Save, Organize & Rediscover Your Bookmarks",
+  description: "A clean, private bookmark manager that helps you save, organize, and rediscover the web pages that matter most. Free forever, powered by Google sign-in.",
 };
 
 export default function RootLayout({
@@ -41,7 +41,7 @@ export default function RootLayout({
       <body className="font-sans antialiased min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >

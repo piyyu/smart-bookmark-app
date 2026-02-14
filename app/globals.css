@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark, .dark *));
+
 @theme {
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --font-sans: var(--font-poppins);
   --font-serif: var(--font-instrument-serif);
   --font-mono: var(--font-jetbrains-mono);
@@ -31,7 +34,7 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   /* Landing Page Colors */
-  --color-landing-primary: #E11D48;
+  --color-landing-primary: #FF1B6D;
   --color-landing-background-light: #fff0f5;
   --color-landing-background-dark: #000000;
   --color-landing-forest: #0f0005;

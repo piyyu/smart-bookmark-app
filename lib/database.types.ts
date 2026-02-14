@@ -15,6 +15,8 @@ export interface Database {
           user_id: string
           title: string
           url: string
+          is_favorite: boolean
+          folder_id: string | null
           created_at: string
         }
         Insert: {
@@ -22,6 +24,8 @@ export interface Database {
           user_id?: string
           title: string
           url: string
+          is_favorite?: boolean
+          folder_id?: string | null
           created_at?: string
         }
         Update: {
@@ -29,11 +33,44 @@ export interface Database {
           user_id?: string
           title?: string
           url?: string
+          is_favorite?: boolean
+          folder_id?: string | null
           created_at?: string
         }
         Relationships: [
           {
             foreignKeyName: "bookmarks_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      folders: {
+        Row: {
+          id: string
+          user_id: string
+          name: string
+          color: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id?: string
+          name: string
+          color: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          name?: string
+          color?: string
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "folders_user_id_fkey"
             columns: ["user_id"]
             referencedRelation: "users"
             referencedColumns: ["id"]
