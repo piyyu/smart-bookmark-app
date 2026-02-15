@@ -547,7 +547,7 @@ export default function DashboardShell({ initialBookmarks, initialFolders, user 
 
           {/* Actions */}
           <div className="flex items-center gap-2 ml-4">
-            <ThemeToggle className="text-landing-forest/40 dark:text-white/40 hover:text-landing-primary dark:hover:text-landing-primary hover:bg-landing-forest/5 dark:hover:bg-white/5" />
+            <ThemeToggle className="text-landing-forest/40 dark:text-white/40 hover:text-landing-primary dark:hover:text-landing-primary" />
             <button
               onClick={() => setShowAddModal(true)}
               className="flex items-center gap-2 bg-landing-primary hover:bg-landing-primary/90 active:scale-[0.97] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-lg shadow-landing-primary/20"
@@ -570,16 +570,16 @@ export default function DashboardShell({ initialBookmarks, initialFolders, user 
                   {searchQuery && ` matching "${searchQuery}"`}
                 </p>
               </div>
-              <div className="flex gap-1 p-0.5 bg-landing-forest/[0.04] dark:bg-white/[0.04] rounded-lg border border-landing-forest/5 dark:border-white/5">
+              <div className="flex gap-0.5 p-0.5 bg-landing-forest/[0.04] dark:bg-white/[0.04] rounded-lg border border-landing-forest/5 dark:border-white/5">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-1.5 rounded transition-all ${viewMode === 'grid' ? 'bg-white dark:bg-white/10 shadow-sm text-landing-forest dark:text-white' : 'text-landing-forest/35 dark:text-white/35 hover:text-landing-forest/60'}`}
+                  className={`w-9 h-9 flex items-center justify-center rounded-md transition-all ${viewMode === 'grid' ? 'bg-white dark:bg-white/10 shadow-sm text-landing-forest dark:text-white' : 'text-landing-forest/35 dark:text-white/35 hover:text-landing-forest/60'}`}
                 >
                   <span className="material-icons text-lg">grid_view</span>
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-1.5 rounded transition-all ${viewMode === 'list' ? 'bg-white dark:bg-white/10 shadow-sm text-landing-forest dark:text-white' : 'text-landing-forest/35 dark:text-white/35 hover:text-landing-forest/60'}`}
+                  className={`w-9 h-9 flex items-center justify-center rounded-md transition-all ${viewMode === 'list' ? 'bg-white dark:bg-white/10 shadow-sm text-landing-forest dark:text-white' : 'text-landing-forest/35 dark:text-white/35 hover:text-landing-forest/60'}`}
                 >
                   <span className="material-icons text-lg">view_list</span>
                 </button>
