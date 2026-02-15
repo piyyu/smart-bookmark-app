@@ -3,6 +3,7 @@
 A simple, secure, and real-time bookmark manager built with Next.js (App Router), Supabase, and Tailwind CSS.
 
 
+**Live URL:** [mark-it-mi76.vercel.app](https://mark-it-mi76.vercel.app)
 **Repo:** [github.com/piyyu/smart-bookmark-app](https://github.com/piyyu/smart-bookmark-app)
 
 ---
