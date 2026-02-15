@@ -1,14 +1,21 @@
-# Smart Bookmark App — Markit
+<div align="center">
+  <img src="public/logo.svg" alt="Markit Logo" width="100" />
+  <h1>Markit</h1>
+  <p><strong>Your bookmarks, beautifully organized.</strong></p>
+  <p>
+    A simple, secure, and real-time bookmark manager.<br/>
+    Built with Next.js 14, Supabase, and Tailwind CSS.
+  </p>
+  <p>
+    <a href="https://mark-it-mi76.vercel.app"><strong>View Live Demo</strong></a>
+  </p>
+</div>
 
-A simple, secure, and real-time bookmark manager built with Next.js (App Router), Supabase, and Tailwind CSS.
-
-
-**Live URL:** [mark-it-mi76.vercel.app](https://mark-it-mi76.vercel.app)
-**Repo:** [github.com/piyyu/smart-bookmark-app](https://github.com/piyyu/smart-bookmark-app)
+<br/>
 
 ---
 
-## Requirements Checklist
+### Requirements Checklist
 
 | # | Requirement | Status |
 |---|---|:---:|
@@ -21,7 +28,7 @@ A simple, secure, and real-time bookmark manager built with Next.js (App Router)
 
 ---
 
-## Tech Stack
+### Tech Stack
 
 - **Framework:** Next.js 16 (App Router, not Pages Router)
 - **Database:** Supabase (Auth, Postgres Database, Realtime)
@@ -30,7 +37,7 @@ A simple, secure, and real-time bookmark manager built with Next.js (App Router)
 
 ---
 
-## Features Beyond Base Requirements
+### Features
 
 - **Folder organization** — color-coded folders to group bookmarks
 - **Favorites** — star bookmarks for quick access
@@ -42,7 +49,7 @@ A simple, secure, and real-time bookmark manager built with Next.js (App Router)
 
 ---
 
-## Problems I Ran Into & How I Solved Them
+### Challenges & Solutions
 
 ### 1. Hydration Mismatch Error on `<body>` Tag
 
@@ -84,7 +91,7 @@ ALTER TABLE bookmarks
 
 ---
 
-## Setup Instructions
+### Setup Instructions
 
 ### 1. Prerequisites
 - Node.js 18+
@@ -154,7 +161,7 @@ npm run dev
 
 ---
 
-## Deployment on Vercel
+### Deployment
 
 1. Push code to GitHub
 2. Import project into Vercel
